@@ -1,0 +1,11 @@
+#include "NXCDefS.h"
+task main(){
+     SetSensorLowspeed(IN_4);
+     while(true){
+             OnFwd(OUT_AC, 75);
+             until(SensorUS(IN_4) <= 20);
+             Off(OUT_AC);
+             OnFwd(OUT_C, 75);
+             Wait(2000);
+     }
+}
